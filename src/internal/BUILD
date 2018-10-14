@@ -14,6 +14,22 @@ cc_library(
 )
 
 cc_library(
+  name = "ssio_tls_client_impl",
+  hdrs = ["ssio_client_impl.h"],
+  srcs = ["ssio_client_impl.cpp"],
+	copts = [
+	  "-DSIO_TLS",
+	],
+  deps = [
+    ":ssio_packet",
+		"//src:ssio_client_h",
+    "@boost//:asio",
+    "@boost//:version",
+    "@websocketpp//:websocketpp"
+  ]
+)
+
+cc_library(
   name = "ssio_packet",
   hdrs = ["ssio_packet.h"],
   srcs = ["ssio_packet.cpp"],
