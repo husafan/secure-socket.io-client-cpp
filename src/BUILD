@@ -22,6 +22,12 @@ cc_library(
     "//src/internal:ssio_client_impl",
 		"//src/internal:ssio_packet",
   ],
+	linkopts = [
+    "-lrt",
+    "-lcrypto",
+    "-lssl",
+    "-lz",
+  ],
 	alwayslink = 1,
 )
 

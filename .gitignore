@@ -1,2 +1,8 @@
 build/
 **/*.user
+
+# Bazel artifacts
+bazel-*
+
+# Emacs
+*~
